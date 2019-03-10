@@ -2,16 +2,20 @@
   text-align: center;
 }
 
+.projectDisplay {
+  background-color:rgb(145, 155, 116)
+}
+  
 
 .App-header {
-  background-color: #222;
-  height: 150px;
+  background-color: rgb(153, 153, 127);
+  height: 70px;
   padding: 20px;
-  color: white;
+  color: rgb(245, 245, 245);
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 3.0em;
 }
 
 .App-intro {

@@ -15,22 +15,43 @@ import { takeEvery, put as dispatch } from 'redux-saga/effects';
 // Create the rootSaga generator function
 function* rootSaga() {
     yield takeEvery('ADD_PROJECT', postProject);
+    yield takeEvery('FETCH_PROJECT', getProject);
+    yield takeEvery('DELETE_PROJECT', deleteProject);
 
 }
 
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
 
-function* postProject(action) {
-    console.log('rootSaga was hit - post', action.payload);
+//generator function POST project data
+function * postProject(action){
     try {
-        yield axios.post('/api/project', action.payload);
-        yield dispatch({ type: 'ADD_PROJECT', postProject })
+        yield axios.post('/api/project', action.payload)
+        yield dispatch({ type: 'FETCH_PROJECT' });
     }
     catch (error) {
-        console.log('error with post axios request', error);
+        console.log('error with axios post request', error);
+
     }
 }
+
+function* getProject() {
+    const getProjectResponse = yield axios.get('/api/project');
+    yield dispatch({type: 'SET_PROJECTS', payload: getProjectResponse.data});
+}
+
+function* deleteProject(action) {
+    try {
+        console.log('hi');
+        yield axios.delete('/api/project/' + action.payload);
+        yield dispatch({ type: 'FETCH_PROJECT' });
+    }
+    catch (error) {
+        console.log('error deleting', action, error);
+    }
+}
+
+
 
 // Used to store projects returned from the server
 const projects = (state = [], action) => {

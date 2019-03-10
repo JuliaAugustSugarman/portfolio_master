@@ -1,36 +1,51 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-const mapStateToProps = reduxState => ({
-    reduxState,
-});
+
+
+
+
+
+
 
 class ProjectListAdmin extends Component {
 
-    // componentDidMount() {
-    //     this.getproject();
-    //     // use component did mount to dispatch an action to request the plantList from the API
-    // }
-
-    // getPlants() {
-    //     this.props.dispatch({ type: 'FETCH_PLANTS' })
-    // }//get function
+    adminList() {
+        return this.props.projects.map(project =>
+            <tr key={project.id}>
+                <td> {project.name} </td>
+                <td> <button onClick= {this.onDelete(project.id)} className="deleteButton">Delete</button> </td>
+            </tr>
+        )
+    }
+    onDelete = (id) => () => {
+        console.log('deleting id', id);
+        this.props.dispatch({ type: 'DELETE_PROJECT', payload: id});
+    }
 
 
     render() {
+ 
         return (
             <div>
-                
-                    {/* {this.props.reduxState.projectlist.map((plant) => <PlantItem key={plant.id} plantData={plant} />)} */}
-              
+                <table>
+                    <tbody>
+                        {this.adminList()}
+                    </tbody>
+                </table>
             </div>
+
         );
     }
+
+
 }
 
 
 
+const mapReduxStateToProps = (reduxState) => {
+    return reduxState;
+}
 
 
-
-export default connect(mapStateToProps)(ProjectListAdmin);
+export default connect(mapReduxStateToProps)(ProjectListAdmin);

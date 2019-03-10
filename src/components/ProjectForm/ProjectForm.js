@@ -4,9 +4,7 @@ import ProjectListAdmin from '../ProjectListAdmin/ProjectListAdmin';
 
 
 
-const mapStateToProps = reduxState => ({
-    reduxState,
-});
+
 
 class ProjectForm extends Component {
 
@@ -26,7 +24,7 @@ class ProjectForm extends Component {
     handleChangeFor = (propertyName) => (event) => {
         this.setState({
             newProject: {
-                ...this.state.newproject,
+                ...this.state.newProject,
                 [propertyName]: event.target.value,
             },
         });
@@ -54,7 +52,6 @@ class ProjectForm extends Component {
 
         return (
             <div>
-                <ProjectListAdmin />
                 <form onSubmit={this.addNewProject}>
                     <input placeholder="name" type='text' value={this.state.newProject.name} onChange={this.handleChangeFor('name')} />
                     <input placeholder="description" type='text' value={this.state.newProject.description} onChange={this.handleChangeFor('description')} />
@@ -73,4 +70,9 @@ class ProjectForm extends Component {
 
 
 
-export default connect(mapStateToProps)(ProjectForm);
+const mapReduxStateToProps = (reduxState) => {
+    return reduxState;
+}
+
+
+export default connect(mapReduxStateToProps)(ProjectForm);

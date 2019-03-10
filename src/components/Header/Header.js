@@ -6,8 +6,10 @@ class Header extends Component {
     render() {
         return (
             <div>
-              <h1> Julia Sugarman's Project Library</h1>
-                
+               <header>
+                <h1 className='App-header'> Julia August Sugarman's Project Library</h1>
+                <img src='images/Julia.jpg' />
+                </header>
             </div>
         );
     }

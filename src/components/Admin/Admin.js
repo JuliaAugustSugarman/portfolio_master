@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ProjectForm from '../ProjectForm/ProjectForm';
-import ProjectListAdmin from '../ProjectListAdmin/ProjectListAdmin';
+import ProjectListAdmin from '../ProjectListAdmin/ProjectListAdmin'
+import ProjectForm from '../ProjectForm/ProjectForm'
+
+
 
 
 
@@ -11,17 +13,17 @@ const mapStateToProps = reduxState => ({
 
 class Admin extends Component {
 
-
-
-
+    
 
     render() {
+
         return (
             <div>
                 <ProjectForm />
                 <ProjectListAdmin />
-                
+               
             </div>
+
         );
     }
 
