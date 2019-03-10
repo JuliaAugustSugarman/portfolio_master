@@ -9,14 +9,28 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 // Import saga middleware
 import createSagaMiddleware from 'redux-saga';
+import axios from 'axios';
+import { takeEvery, put as dispatch } from 'redux-saga/effects';
 
 // Create the rootSaga generator function
 function* rootSaga() {
+    yield takeEvery('ADD_PROJECT', postProject);
 
 }
 
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
+
+function* postProject(action) {
+    console.log('rootSaga was hit - post', action.payload);
+    try {
+        yield axios.post('/api/project', action.payload);
+        yield dispatch({ type: 'ADD_PROJECT', postProject })
+    }
+    catch (error) {
+        console.log('error with post axios request', error);
+    }
+}
 
 // Used to store projects returned from the server
 const projects = (state = [], action) => {
