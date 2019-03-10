@@ -9,9 +9,10 @@ import { connect } from 'react-redux';
 
 class Home extends Component {
 
+
     homeList() {
         return this.props.projects.map(project =>
-            <tr calssName="projectDisplay" key={project.id}>
+            <tr className="projectDisplay" key={project.id}>
                 <td> {project.name} </td>
                 <td> {project.description}</td>
                 <td> {project.thumbnail}</td>

@@ -9,6 +9,12 @@ import { connect } from 'react-redux';
 
 
 class ProjectListAdmin extends Component {
+    componentDidMount() {
+        this.getProject();
+    }
+    getProject(){
+        this.props.dispatch({ type: 'FETCH_PROJECT'})
+    }
 
     adminList() {
         return this.props.projects.map(project =>

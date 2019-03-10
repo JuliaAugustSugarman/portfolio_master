@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ProjectListAdmin from '../ProjectListAdmin/ProjectListAdmin';
+
 
 
 
@@ -52,16 +52,23 @@ class ProjectForm extends Component {
 
         return (
             <div>
+
+
                 <form onSubmit={this.addNewProject}>
-                    <input placeholder="name" type='text' value={this.state.newProject.name} onChange={this.handleChangeFor('name')} />
-                    <input placeholder="description" type='text' value={this.state.newProject.description} onChange={this.handleChangeFor('description')} />
-                    <input placeholder="thumbnail" type='text' value={this.state.newProject.thumbnail} onChange={this.handleChangeFor('thumbnail')} />
-                    <input placeholder="website" type='text' value={this.state.newProject.website} onChange={this.handleChangeFor('website')} />
-                    <input placeholder="github" type='text' value={this.state.newProject.github} onChange={this.handleChangeFor('github')} />
-                    <input placeholder="date_completed" type='date' value={this.state.newProject.date_completed} onChange={this.handleChangeFor('date_completed')} />
-                    <input placeholder="tag_id" value={this.state.newProject.tag_id} onChange={this.handleChangeFor('tag_id')} />
+                    <div className = "thumb"> <input placeholder="thumbnail" type='text' value={this.state.newProject.thumbnail} onChange={this.handleChangeFor('thumbnail')} /></div>
+                    <div>
+                        <input placeholder="name" type='text' value={this.state.newProject.name} onChange={this.handleChangeFor('name')} />
+                        <input placeholder="description" type='text' value={this.state.newProject.description} onChange={this.handleChangeFor('description')} />
+                        <input placeholder="tag_id" value={this.state.newProject.tag_id} onChange={this.handleChangeFor('tag_id')} />
+                    </div>
+                    <div className = "projectBody">
+                        <input placeholder="thumbnail" type='text' value={this.state.newProject.thumbnail} onChange={this.handleChangeFor('thumbnail')} />
+                        <input placeholder="website" type='text' value={this.state.newProject.website} onChange={this.handleChangeFor('website')} />
+                        <input placeholder="github" type='text' value={this.state.newProject.github} onChange={this.handleChangeFor('github')} />
+                        <input placeholder="date_completed" type='date' value={this.state.newProject.date_completed} onChange={this.handleChangeFor('date_completed')} />
+                    </div>
                     <br />
-                    <button> Add New Project </button>
+                    <button className= "addButton"> Add New Project </button>
                 </form>
             </div>
         );
