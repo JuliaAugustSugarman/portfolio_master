@@ -2,20 +2,41 @@
   text-align: center;
 }
 
+.adminList{
+  text-align: center;
+  background-color: rgb(231, 231, 231);
+  height: 65px;
+  padding: 78px;
+  color: rgb(35, 107, 129);
+  font-size: large;
+  display: inherit
+
+}
+.projectDisplay{
+  height: 40px;
+  padding: 20px;
+  color: rgb(241, 255, 41);
+  text-align: center;
+}
+
+.table{
+  text-align: center;
+  list-style: inside;
+}
+
 .projectDisplay {
   background-color:rgb(145)
 }
   body {
-  background-image: url('/images/mag-pole-105542-unsplash.jpg');
+  background-image: url('/images/simone-hutsch-1142161-unsplash.jpg');
   background-size: cover;
   color: rgb(211, 193, 193);
 }
 
 .App-header {
-  background-color: rgb(231, 231, 231);
   height: 40px;
   padding: 20px;
-  color: rgb(35, 107, 129);
+  color: rgb(241, 255, 41);
 }
 
 .App-title {

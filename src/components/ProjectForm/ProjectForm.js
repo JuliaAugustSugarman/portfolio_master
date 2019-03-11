@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
+
 
 
 
@@ -61,10 +58,19 @@ class ProjectForm extends Component {
                     <div>
                         <input placeholder="name" type='text' value={this.state.newProject.name} onChange={this.handleChangeFor('name')} />
                         <input placeholder="description" type='text' value={this.state.newProject.description} onChange={this.handleChangeFor('description')} />
-                        <input placeholder="tag_id" value={this.state.newProject.tag_id} onChange={this.handleChangeFor('tag_id')} />
+                        {/* <input placeholder="tag_id" value={this.state.newProject.tag_id} onChange={this.handleChangeFor('tag_id')} /> */}
+                        <select value={this.state.newProject.tag} onChange={this.handleChangeFor('tag')}>
+                            <option value="1">Platform</option>
+                            <option value="2">React</option>
+                            <option value="3">jQuery</option>
+                            <option value="4">Node</option>
+                            <option value="5">SQL</option>
+                            <option value="6">Redux</option>
+                            <option value="7">HTML</option>
+                        </select><br />
                     </div>
                     <div className = "projectBody">
-                        <input placeholder="thumbnail" type='text' value={this.state.newProject.thumbnail} onChange={this.handleChangeFor('thumbnail')} />
+                        {/* <input placeholder="thumbnail" type='text' value={this.state.newProject.thumbnail} onChange={this.handleChangeFor('thumbnail')} /> */}
                         <input placeholder="website" type='text' value={this.state.newProject.website} onChange={this.handleChangeFor('website')} />
                         <input placeholder="github" type='text' value={this.state.newProject.github} onChange={this.handleChangeFor('github')} />
                         <input placeholder="date_completed" type='date' value={this.state.newProject.date_completed} onChange={this.handleChangeFor('date_completed')} />

@@ -18,9 +18,9 @@ class ProjectListAdmin extends Component {
 
     adminList() {
         return this.props.projects.map(project =>
-            <tr key={project.id}>
-                <td> {project.name} </td>
-                <td> <button onClick= {this.onDelete(project.id)} className="deleteButton">Delete</button> </td>
+            <tr className="adminList" key={project.id}>
+                <td classs="table"> {project.name} </td>
+                <td classs="table"> <button onClick= {this.onDelete(project.id)} className="deleteButton">Delete</button> </td>
             </tr>
         )
     }
