@@ -54,7 +54,15 @@ class ProjectForm extends Component {
 
 
                 <form onSubmit={this.addNewProject}>
-                    <div className = "thumb"> <input placeholder="thumbnail" type='text' value={this.state.newProject.thumbnail} onChange={this.handleChangeFor('thumbnail')} /></div>
+                    <select value={this.state.newProject.thumbnail} onChange={this.handleChangeFor('thumbnail')}>
+                        <option value=" " >Add Image</option>
+                        <option >Flower Varieties</option>
+                        <option>Gallery of my Life</option>
+                        <option >Feedback Form</option>
+                        <option >Fruit Basket</option>
+                        <option >Calculator</option>
+                    </select><br />
+                    {/* <div className = "thumb"> <input placeholder="thumbnail" type='text' value={this.state.newProject.thumbnail} onChange={this.handleChangeFor('thumbnail')} /></div> */}
                     <div>
                         <input placeholder="name" type='text' value={this.state.newProject.name} onChange={this.handleChangeFor('name')} />
                         <input placeholder="description" type='text' value={this.state.newProject.description} onChange={this.handleChangeFor('description')} />
@@ -70,7 +78,6 @@ class ProjectForm extends Component {
                         </select><br />
                     </div>
                     <div className = "projectBody">
-                        {/* <input placeholder="thumbnail" type='text' value={this.state.newProject.thumbnail} onChange={this.handleChangeFor('thumbnail')} /> */}
                         <input placeholder="website" type='text' value={this.state.newProject.website} onChange={this.handleChangeFor('website')} />
                         <input placeholder="github" type='text' value={this.state.newProject.github} onChange={this.handleChangeFor('github')} />
                         <input placeholder="date_completed" type='date' value={this.state.newProject.date_completed} onChange={this.handleChangeFor('date_completed')} />
