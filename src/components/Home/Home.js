@@ -8,7 +8,8 @@ import Typography from '@material-ui/core/Typography';
 const styles = {
 
     form: {
-        maxWidth: '700px',
+        maxWidth: '1000px',
+        maxHeight: '1000px',
         minWidth: '300px',
         padding: '40px',
         margin: 'auto',
@@ -17,16 +18,13 @@ const styles = {
     },
 
     text: {
-        color: 'white',
+        color: 'a09f49',
     },
 
     input: {
         margin: '12px',
     },
 
-    button: {
-        width: '100%',
-    }
 }
 
 
@@ -57,9 +55,9 @@ class Home extends Component {
             <div>
 
                 <Paper className={classes.form}>
-                    <Typography variant='h4' className={classes.text}>Create New Plant</Typography>
+                    <Typography variant='h4' className={classes.text}>Project List</Typography>
                 <table>
-                    <tbody>
+                    <tbody className="hometable">
                         {this.homeList()}
                     </tbody>
                 </table>

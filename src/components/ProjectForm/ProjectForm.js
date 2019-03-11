@@ -107,6 +107,7 @@ class ProjectForm extends Component {
                             <option value="7">HTML</option>
                         </select><br />
                     </div>
+                    
                     <div className = "projectBody">
                         <input placeholder="website" type='text' value={this.state.newProject.website} onChange={this.handleChangeFor('website')} />
                         <input placeholder="github" type='text' value={this.state.newProject.github} onChange={this.handleChangeFor('github')} />

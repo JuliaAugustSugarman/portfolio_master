@@ -34,11 +34,13 @@ class ProjectListAdmin extends Component {
  
         return (
             <div>
+                 <center>
                 <table>
                     <tbody>
                         {this.adminList()}
                     </tbody>
                 </table>
+                 </center >
             </div>
 
         );

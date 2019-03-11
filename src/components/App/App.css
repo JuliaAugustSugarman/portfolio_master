@@ -28,9 +28,10 @@
   background-color:rgb(145)
 }
   body {
-  background-image: url('/images/simone-hutsch-1142161-unsplash.jpg');
+  background-image: url('kj.jpg');
   background-size: cover;
-  color: rgb(211, 193, 193);
+  /* background-repeat: repeat-y; */
+
 }
 
 .App-header {
@@ -51,3 +52,4 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
