@@ -32,6 +32,12 @@ const styles = {
 
 class Home extends Component {
 
+    componentDidMount() {
+        this.getProject();
+    }
+    getProject() {
+        this.props.dispatch({ type: 'FETCH_PROJECT' })
+    }
 
     homeList() {
         return this.props.projects.map(project =>
