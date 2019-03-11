@@ -1,6 +1,32 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Paper from '@material-ui/core/Paper';
+import { withStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
 
+const styles = {
+
+    form: {
+        maxWidth: '700px',
+        minWidth: '300px',
+        padding: '40px',
+        margin: 'auto',
+        marginTop: '20px',
+        
+    },
+
+    text: {
+        color: 'white',
+    },
+
+    input: {
+        margin: '12px',
+    },
+
+    button: {
+        width: '100%',
+    }
+}
 
 
 
@@ -48,11 +74,13 @@ class ProjectForm extends Component {
 
 
     render() {
+        const classes = this.props.classes;
 
         return (
             <div>
 
-
+                <Paper className={classes.form}>
+                    <Typography variant='h4' className={classes.text}>Create New Plant</Typography>
                 <form onSubmit={this.addNewProject}>
                     <select value={this.state.newProject.thumbnail} onChange={this.handleChangeFor('thumbnail')}>
                         <option value=" " >Add Image</option>
@@ -61,6 +89,8 @@ class ProjectForm extends Component {
                         <option >Feedback Form</option>
                         <option >Fruit Basket</option>
                         <option >Calculator</option>
+                        <option >To Do List</option>
+
                     </select><br />
                     {/* <div className = "thumb"> <input placeholder="thumbnail" type='text' value={this.state.newProject.thumbnail} onChange={this.handleChangeFor('thumbnail')} /></div> */}
                     <div>
@@ -85,6 +115,7 @@ class ProjectForm extends Component {
                     <br />
                     <button className= "addButton"> Add New Project </button>
                 </form>
+                </Paper>
             </div>
         );
     }
@@ -97,4 +128,6 @@ const mapReduxStateToProps = (reduxState) => {
 }
 
 
-export default connect(mapReduxStateToProps)(ProjectForm);
+export default withStyles(styles)(
+    connect(mapReduxStateToProps)(ProjectForm)
+);
