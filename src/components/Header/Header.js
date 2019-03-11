@@ -8,7 +8,7 @@ class Header extends Component {
             <div>
                <header>
                 <h1 className='App-header'> Julia August Sugarman's Project Library</h1>
-                <img src='images/Julia.jpg' />
+                
                 </header>
             </div>
         );

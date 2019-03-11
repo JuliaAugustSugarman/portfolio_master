@@ -3,15 +3,19 @@
 }
 
 .projectDisplay {
-  background-color:rgb(145, 155, 116)
+  background-color:rgb(145)
 }
-  
+  body {
+  background-image: url('/images/mag-pole-105542-unsplash.jpg');
+  background-size: cover;
+  color: rgb(211, 193, 193);
+}
 
 .App-header {
-  background-color: rgb(153, 153, 127);
-  height: 70px;
+  background-color: rgb(231, 231, 231);
+  height: 40px;
   padding: 20px;
-  color: rgb(245, 245, 245);
+  color: rgb(35, 107, 129);
 }
 
 .App-title {

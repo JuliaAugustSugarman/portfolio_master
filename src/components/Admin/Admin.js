@@ -20,7 +20,7 @@ class Admin extends Component {
         
         return (
             <div>
-                <Link to='/'>Back to Project Page</Link>
+                <Link to='/'> Back to Project Page </Link>
                 <ProjectForm />
                 <ProjectListAdmin />
                
